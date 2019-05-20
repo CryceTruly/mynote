@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from note.views import noteView
+from note.views import additem,deleteItem
 
 #/Library/Frameworks/Python.framework/Versions/3.7/bin/python3 -m pip install 'python-language-server[all]'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', noteView),
+        path('additem', additem),
+        path('deleteitem/<int:id>/', deleteItem),
 ]
